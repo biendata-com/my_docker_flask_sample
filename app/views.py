@@ -51,3 +51,10 @@ def model(adj, feature):
    #######################################################
    
    return '/application/out.pkl'
+
+
+@app.route('/attack', methods=['GET'])
+def attack():
+   # This API returns the attack file. You can simply replace the file with yours.
+   your_attack_file = '/application/submit.zip'
+   return send_file(your_attack_file, attachment_filename='submit.zip', as_attachment=True) 
